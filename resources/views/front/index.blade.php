@@ -136,8 +136,8 @@
                     <a href="{{@$midLeftAd->link}}"><img src="{{getFrontImage(@$midLeftAd->image,'notices')}}" alt="Left Advertisement"></a>
                 </div>
             </div>
-            <div class="col-md-6">getFrontImage
-                <div class="ads-wrap">
+            <div class="col-md-6">
+                <div class="ads-wrap">   
                     <a href="{{@$midRightAd->link}}"><img src="{{ getFrontImage(@$midRightAd->image,'notices') }}" alt="Right Advertisement"></a>
                 </div>
             </div>
