@@ -100,6 +100,10 @@
             <div class="item">
                 <div class="product-wrap">
                     <div class="product-img">
+                        @php
+                            $product_name = $product->product_name;
+                            $product_name = str_replace('"','',$product_name);
+                        @endphp
                         <a href="{{ route('product.details', $product->product_slug) }}"><img src="{{getFrontImage($product->image,'products')}}" alt="{{$product->product_name}}" /></a>
                         <div class="group-btn">
                             <x-_wishlist wishlist="{{$product->userWish}}"  :productId="$product->id"  > </x-_wishlist>
@@ -107,7 +111,7 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product->product_name}}</a></h4>
+                        <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                         @if ($product->product_compare_price > $product->product_original_price)
                             <span><small><del>Rs.{{ number_format($product->product_compare_price) }}</del></small> Rs.{{ number_format($product->product_original_price) }}</span>
                         @else
@@ -156,6 +160,10 @@
                         <div class="item col-md-3 col-sm-6">
                             <div class="product-wrap">
                                 <div class="product-img">
+                                    @php
+                                        $product_name = $product->product_name;
+                                        $product_name = str_replace('"','',$product_name);
+                                    @endphp
                                     <a href="{{ route('product.details', $product->product_slug) }}"><img src="{{ getFrontImage($product->image,'products') }}" /></a>
                                     <div class="group-btn">
                                         <x-_wishlist wishlist="{{$product->userWish}}"  :productId="$product->id"  > </x-_wishlist>
@@ -163,7 +171,11 @@
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product->product_name}}</a></h4>
+                                    @php
+                                        $product_name = $product->product_name;
+                                        $product_name = str_replace('"','',$product_name);
+                                    @endphp
+                                    <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                                     @if ($product->product_compare_price > $product->product_original_price)
                                         <span><small><del>Rs.{{ number_format($product->product_compare_price) }}</del></small> Rs.{{ number_format($product->product_original_price) }}</span>
                                     @else
@@ -303,7 +315,12 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product->product_name}}</a></h4>
+                        @php
+                            $product_name = $product->product_name;
+                            $product_name = str_replace('"','',$product_name);
+                        
+                        @endphp
+                        <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                         @if ($product->product_compare_price > $product->product_original_price)
                             <span><small><del>Rs.{{ number_format($product->product_original_price) }}</del></small> Rs.{{ number_format($product->product_compare_price) }}</span>
                         @else

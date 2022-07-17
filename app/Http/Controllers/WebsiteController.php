@@ -49,7 +49,7 @@ class WebsiteController extends Controller
 
 
         $newProducts = Product::where('showOnHome','1')->allStatus()->latest()->limit(40)->get();
-        //      dd($newProducts);
+            //   dd($newProducts);
 
         $onSaleProducts = Product::where('showOnHome','1')->allStatus()->latest()->where('on_sale', '1')->limit(9)->get();
 

@@ -61,7 +61,7 @@ Products | {{env('APP_NAME')}}
 
                         <div class="col-sm-10 form-group">
                             <input class="form-control" name="product_name" placeholder="eg :: Converse Chuck Taylor All Star Brown Hi Shoes" type="text" value="<?php if (isset($product->product_name)) {
-                                                                                                                                                                        echo $product->product_name;
+                                                                                                                                                                        echo str_replace('"', '', $product->product_name);
                                                                                                                                                                     } else {
                                                                                                                                                                         echo old('product_name');
                                                                                                                                                                     } ?>">
