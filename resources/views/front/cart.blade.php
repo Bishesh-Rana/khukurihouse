@@ -111,12 +111,12 @@
                                     <tbody>
                                         <tr>
                                             <td>{{count($cart_products)}} item</td>
-                                            <td>Rs.{{$subTotal}}</td>
+                                            <td>USD {{$subTotal}}</td>
                                         </tr>
                                         
                                         <tr>
                                             <td>Total</td>
-                                            <td>Rs.{{$subTotal}}</td>
+                                            <td>USD {{$subTotal}}</td>
                                         </tr>
                                     </tbody>
                                 </table>

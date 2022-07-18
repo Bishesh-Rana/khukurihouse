@@ -83,7 +83,7 @@
                                 <h4><a
                                         href="{{ route('product.details', $product->product_slug) }}">{{ $product->product_name }}</a>
                                 </h4>
-                                <span>{{ $product->product_original_price }}</span>
+                                <span>{{ $product->currency }}&nbsp;{{ $product->product_original_price }}</span>
                                 <a href="{{ route('product.details', $product->product_slug) }}"
                                     class="btn">View Details</a>
                             </div>

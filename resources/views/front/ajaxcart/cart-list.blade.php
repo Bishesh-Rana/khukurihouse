@@ -14,6 +14,7 @@
                 <div class="widget woocommerce widget_shopping_cart">
                     <div class="widget_shopping_cart_content">
                         <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                           
                             @foreach ($cart_products as $product)
                                 <li class="woocommerce-mini-cart-item mini_cart_item">
                                     <div class="c-list-wrap">
@@ -32,7 +33,7 @@
                                             <span class="p-list">{{ $product['item']['product_name'] }}&nbsp;</span>
                                             <span class="quantity">{{ $product['qty'] }} ×
                                                 <span class="woocommerce-Price-amount amount">
-                                                    <span class="woocommerce-Price-currencySymbol">Rs.
+                                                    <span class="woocommerce-Price-currencySymbol">{{$product['item']['currency']}}
                                                     </span>{{ number_format($product['item']['product_original_price']) }}</span>
                                             </span>
                                         </div>
@@ -44,7 +45,7 @@
                         <p class="woocommerce-mini-cart__total total">
                             <strong>Subtotal:</strong>
                             <span class="woocommerce-Price-amount amount">
-                                <span class="woocommerce-Price-currencySymbol">Rs.
+                                <span class="woocommerce-Price-currencySymbol">{{$product['item']['currency']}}
                                 </span>{{ number_format(Session::get('cart')->totalPrice) }}</span>
                         </p>
                         <p class="woocommerce-mini-cart__buttons buttons">

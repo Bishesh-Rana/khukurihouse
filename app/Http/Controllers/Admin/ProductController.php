@@ -163,6 +163,7 @@ class ProductController extends Controller
             $product->on_sale = request('on_sale');
             $product->best_rated = request('best_rated');
             $product->showOnHome = request('showOnHome');
+            $product->currency = request('currency');
             $product->on_deal = request('on_deal');
             $product->deal_end_date = request('deal_end_date');
 
@@ -337,6 +338,7 @@ class ProductController extends Controller
             'on_sale' => request('on_sale'),
             'best_rated' => request('best_rated'),
             'showOnHome' => request('showOnHome'),
+            'currency' => request('currency'),
             'on_deal' => request('on_deal'),
             'deal_end_date' => request('deal_end_date'),
             'alt' => request('alt'),

@@ -27,18 +27,15 @@ class AjaxCartController extends Controller
         }
         $product->setAttribute('quantity', $request->qty);
         $product->setAttribute('aff_id', $request->aff_id ?? '0');
-
         // dd($request->aff_id);
 
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
 
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
-
         $request->session()->put('cart', $cart);
 
         $cartProducts = $cart->items;
-
         return view('front.ajaxcart.cart-list', compact('cartProducts'))->with('status', 'success');
     }
 

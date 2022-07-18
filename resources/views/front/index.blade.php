@@ -113,9 +113,9 @@
                     <div class="product-content">
                         <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                         @if ($product->product_compare_price > $product->product_original_price)
-                            <span><small><del>Rs.{{ number_format($product->product_compare_price) }}</del></small> Rs.{{ number_format($product->product_original_price) }}</span>
+                            <span><small><del>{{$product->currency}}&nbsp;{{ number_format($product->product_compare_price) }}</del></small> {{$product->currency}}&nbsp;{{ number_format($product->product_original_price) }}</span>
                         @else
-                            <span>Rs.{{ number_format($product->product_original_price) }}</span>
+                            <span>{{$product->currency}}&nbsp;{{ number_format($product->product_original_price) }}</span>
                         @endif
                         <a href="{{ route('product.details', $product->product_slug) }}" class="btn">View Details</a>
                     </div>
@@ -177,9 +177,9 @@
                                     @endphp
                                     <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                                     @if ($product->product_compare_price > $product->product_original_price)
-                                        <span><small><del>Rs.{{ number_format($product->product_compare_price) }}</del></small> Rs.{{ number_format($product->product_original_price) }}</span>
+                                        <span><small><del>{{$product->currency}}&nbsp;{{ number_format($product->product_compare_price) }}</del></small> {{$product->currency}}{{ number_format($product->product_original_price) }}</span>
                                     @else
-                                        <span>Rs.{{ number_format($product->product_original_price) }}</span>
+                                        <span>{{$product->currency}}&nbsp;{{ number_format($product->product_original_price) }}</span>
                                     @endif
                                     <a href="{{ route('product.details', $product->product_slug) }}" class="btn">View Details</a>
                                 </div>
@@ -189,65 +189,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-lg-3 col-md-12">
-                <div class="reviews">
-                    <div class="main-title">
-                        <h3>Customer Reviews</h3>
-                    </div>
-                    <div class="owl-carousel owl-theme review">
-                        <div class="item">
-                            <div class="review-wrap">
-                                <div class="review-img">
-                                    <img src="{{ asset('') }}front/img/review1.png" alt="images">
-                                </div>
-                                <div class="review-content">
-                                    <span>Larry Page</span>
-                                    <div class="rating">
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                    </div>
-                                    <p>
-                                        I bought both small and large felt octopus toys. So cute and different than what I've seen in chain stores! My medium size labradoodle loves chewing on the legs of the small one. It's the perfect size for him. The toys are wider than they look in the
-                                        picture. The large would be good for a bigger dog. The package arrived on time. Thank you!!
-                                    </p>
-                                    <p>
-                                        I bought both small and large felt octopus toys. So cute and different than what I've seen in chain stores! My medium size labradoodle loves chewing on the legs of the small one. It's the perfect size for him. The toys are wider than they look in the
-                                        picture. The large would be good.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="review-wrap">
-                                <div class="review-img">
-                                    <img src="{{ asset('') }}front/img/review1.png" alt="images">
-                                </div>
-                                <div class="review-content">
-                                    <span>$48.78</span>
-                                    <div class="rating">
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
-                                    </div>
-                                    <p>
-                                        I bought both small and large felt octopus toys. So cute and different than what I've seen in chain stores! My medium size labradoodle loves chewing on the legs of the small one. It's the perfect size for him. The toys are wider than they look in the
-                                        picture. The large would be good for a bigger dog. The package arrived on time. Thank you!!
-                                    </p>
-                                    <p>
-                                        I bought both small and large felt octopus toys. So cute and different than what I've seen in chain stores! My medium size labradoodle loves chewing on the legs of the small one. It's the perfect size for him. The toys are wider than they look in the
-                                        picture. The large would be good.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 </section>
@@ -322,9 +263,9 @@
                         @endphp
                         <h4><a href="{{ route('product.details', $product->product_slug) }}">{{$product_name}}</a></h4>
                         @if ($product->product_compare_price > $product->product_original_price)
-                            <span><small><del>Rs.{{ number_format($product->product_original_price) }}</del></small> Rs.{{ number_format($product->product_compare_price) }}</span>
+                            <span><small><del>{{$product->currency}}&nbsp;{{ number_format($product->product_original_price) }}</del></small> {{$product->currency}}&nbsp;{{ number_format($product->product_compare_price) }}</span>
                         @else
-                            <span>Rs.{{ number_format($product->product_original_price) }}</span>
+                            <span>{{$product->currency}}&nbsp;{{ number_format($product->product_original_price) }}</span>
                         @endif
                         <a href="{{ route('product.details', $product->product_slug) }}" class="btn">View Details</a>
                     </div>

@@ -51,7 +51,8 @@
                     <div class="details-content">
                         <h3>{{ @$product->product_name }}</h3>
                         <span><i class="las la-truck"></i> Shipping is Free for this item</span>
-                        <b>Rs.{{ @$product->product_original_price }}</b>
+                       
+                        <b>{{$product->currency}}{{ @$product->product_original_price }}</b>
                         <span class="stock">In Stock</span>
 
                         <div class="choose-color">
@@ -61,11 +62,12 @@
                                     <b>
                                         <input type="number" name="total_quantity" class="form-control total_quantity"
                                             id="total_quantity" onchange="calculateTotalPrice()" value="1" min="1">
+                                        <input type="hidden" value="{{$product->currency}}" id="currency">
                                     </b>
                                 </div>
                                 <div class="qty-list">
                                     <span>Total Price</span>
-                                    <b id="total_price">Rs.{{ @$product->product_original_price }}</b>
+                                    <b id="total_price">{{$product->currency}}{{ @$product->product_original_price }}</b>
                                 </div>
                                 <div class="qty-list">
                                     <span>Model</span>
@@ -264,7 +266,7 @@
                         </div>
                         <div class="product-content">
                             <h4><a href="{{ route('product.details', $product->product_slug) }}">{{@$product->product_name}}</a></h4>
-                            <span>Rs.{{ number_format($product->product_original_price) }}</span>
+                            <span>{{$product->currency}}{{ number_format($product->product_original_price) }}</span>
                             <a href="{{ route('product.details', $product->product_slug) }}" class="btn">View Details</a>
                         </div>
                     </div>
@@ -283,15 +285,15 @@
     <script>
         function calculateTotalPrice() {
             var total_quantity = $("#total_quantity").val();
+            var currency = $("#currency").val();
 
             let total_price = 0;
             let product_price = {{ $product->product_original_price }};
             total_price = product_price * total_quantity
-            console.log(total_quantity)
-            console.log(product_price)
-            console.log(total_price)
+            
+            
 
-            $('#total_price').text('Rs.' + total_price);
+            $('#total_price').text( currency + total_price);
 
 
         }
@@ -304,12 +306,12 @@
                 let data = {
                     productId: $(this).data('product_id'),
                     qty: $('#total_quantity').val(),
+                    cur: $('#currency').val(),
                 }
 
                 const urlParams = new URLSearchParams(window.location.search);
                 const myParams = urlParams.get('aff_id');
                 affId = myParams ?? '0';
-                console.log(urlParams)
 
                 axios.post("{{ route('product.ajax.addToCart') }}" + "?aff_id=" + affId, data).then(
                 res => {

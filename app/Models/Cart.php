@@ -30,7 +30,7 @@ class Cart
         if (empty($storedItem['affId'])){
             $storedItem['affId'] = $item->aff_id;
         }
-
+        $storedItem['currency'] = $item['currency'];
         $storedItem['qty'] = $item->quantity + $storedItem['qty'];
         $storedItem['price'] = $item->product_original_price * $storedItem['qty'];
         $this->items[$id] = $storedItem;

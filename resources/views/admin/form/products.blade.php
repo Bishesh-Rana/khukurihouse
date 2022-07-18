@@ -549,6 +549,25 @@ Products | {{env('APP_NAME')}}
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-sm-2 form-group">
+                            <label class="product-form-label">Currency</label>
+                        </div>
+                        <div class="col-sm-10 form-group">
+
+                            {{-- <label class="ui-radio ui-radio-primary">
+                                <input type="radio" name="currency" value="Rs." <?php echo (isset($product->currency) ? ((isset($product->currency) && ($product->currency == 'Rs')) ? 'checked="checked"' : '') : 'checked="checked"'); ?>>
+                                <span class="input-span"></span>
+                                NRP
+                            </label> --}}
+                            <label class="ui-radio ui-radio-primary">
+                                <input type="radio" name="currency" value="USD" <?php echo (isset($product->currency) && ($product->currency == 'USD')) ? 'checked="checked"' : ''; ?>>
+                                <span class="input-span"></span>
+                                DOLOR
+                            </label>
+                        </div>
+                    </div>
+
                     {{-- <div class="row">
                         <div class="col-sm-2 form-group">
                             <label class="product-form-label">On Deal?</label>
